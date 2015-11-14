@@ -1,0 +1,179 @@
+{
+
+	"DisplayName":"Testlåt",
+	"Difficulty":1,
+	"BeatsPerSecond":120,
+	"SongLength":0,
+	"Notes":[
+
+		{
+
+			"Beat":5.759996,
+			"Direction":6,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":6.559995,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":7.239995,
+			"Direction":2,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":7.999994,
+			"Direction":6,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":8.639994,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":9.159993,
+			"Direction":2,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":11.47999,
+			"Direction":6,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":11.75999,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":12.11999,
+			"Direction":2,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":12.71999,
+			"Direction":6,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":12.87999,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":13.11999,
+			"Direction":2,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":13.67999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":14.07999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":14.39999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":14.67999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":15.03999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":15.39999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":15.79999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":16.19999,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":16.72,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":17.20001,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":17.56002,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":17.96003,
+			"Direction":4,
+			"NoteType":0
+		}
+
+	]
+
+}

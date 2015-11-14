@@ -1,0 +1,138 @@
+{
+
+	"DisplayName":"Testlåt",
+	"Difficulty":1,
+	"BeatsPerSecond":206,
+	"SongLength":0,
+	"Snapping":4,
+	"Notes":[
+
+		{
+
+			"Beat":10.75,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":13,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":15.25,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":17,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":19.75,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":21.75,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":24,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":25.25,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":28,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":30.25,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":32.25,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":33.5,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":36,
+			"Direction":6,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":36.25,
+			"Direction":2,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":37.25,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":38,
+			"Direction":0,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":39.25,
+			"Direction":4,
+			"NoteType":0
+		}
+,
+		{
+
+			"Beat":40.5,
+			"Direction":0,
+			"NoteType":0
+		}
+
+	]
+
+}
