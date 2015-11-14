@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SongXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SongName="Cool Cat" Time="100">
+  <Notes>
+    <Note direction="0" time="10" Row="0" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="2" time="10.5" Row="0" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="4" time="11" Row="0" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="4" time="11.5" Row="0" Type="1" IsStarter="true" IsEndnote="false" />
+    <Note direction="0" time="13" Row="0" Type="1" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="13.5" Row="0" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="2" time="14" Row="0" Type="1" IsStarter="false" IsEndnote="false" />
+    <Note direction="2" time="14.5" Row="0" Type="2" IsStarter="false" IsEndnote="false" />
+    <Note direction="4" time="15.5" Row="0" Type="2" IsStarter="false" IsEndnote="false" />
+    <Note direction="6" time="16" Row="0" Type="2" IsStarter="false" IsEndnote="false" />
+    <Note direction="4" time="16.5" Row="1" Type="2" IsStarter="false" IsEndnote="false" />
+    <Note direction="6" time="17" Row="2" Type="2" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="17.5" Row="3" Type="1" IsStarter="false" IsEndnote="true" />
+    <Note direction="0" time="28" Row="0" Type="2" IsStarter="false" IsEndnote="false" />
+    <Note direction="2" time="29" Row="2" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="4" time="30" Row="1" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="6" time="32" Row="3" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="33" Row="1" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="34" Row="3" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="4" time="35" Row="2" Type="1" IsStarter="true" IsEndnote="false" />
+    <Note direction="2" time="41" Row="1" Type="1" IsStarter="false" IsEndnote="false" />
+    <Note direction="6" time="43" Row="0" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="6" time="45" Row="1" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="4" time="47" Row="3" Type="1" IsStarter="false" IsEndnote="false" />
+    <Note direction="6" time="48" Row="2" Type="1" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="50" Row="1" Type="1" IsStarter="false" IsEndnote="true" />
+    <Note direction="4" time="52" Row="3" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="6" time="53" Row="2" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="54" Row="1" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="55" Row="3" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="56" Row="2" Type="0" IsStarter="false" IsEndnote="false" />
+    <Note direction="0" time="57" Row="1" Type="0" IsStarter="false" IsEndnote="false" />
+  </Notes>
+</SongXml>

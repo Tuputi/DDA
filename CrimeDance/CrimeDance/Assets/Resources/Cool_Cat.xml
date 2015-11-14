@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SongXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SongName="Cool Cat" Time="100">
+  <Notes>
+    <Note direction="0" time="0" Row="0" />
+    <Note direction="2" time="1" Row="1" />
+    <Note direction="4" time="2" Row="2" />
+    <Note direction="6" time="4" Row="3" />
+    <Note direction="0" time="5" Row="1" />
+    <Note direction="0" time="6" Row="2" />
+    <Note direction="2" time="7" Row="3" />
+    <Note direction="2" time="11" Row="1" />
+    <Note direction="4" time="13" Row="0" />
+    <Note direction="6" time="14" Row="1" />
+    <Note direction="4" time="15" Row="3" />
+    <Note direction="6" time="17" Row="2" />
+    <Note direction="0" time="18" Row="1" />
+    <Note direction="0" time="19" Row="0" />
+    <Note direction="2" time="21" Row="2" />
+    <Note direction="4" time="23" Row="1" />
+    <Note direction="6" time="24" Row="3" />
+    <Note direction="0" time="26" Row="1" />
+    <Note direction="0" time="28" Row="3" />
+    <Note direction="2" time="30" Row="2" />
+    <Note direction="2" time="31" Row="1" />
+    <Note direction="4" time="33" Row="0" />
+    <Note direction="6" time="35" Row="1" />
+    <Note direction="4" time="37" Row="3" />
+    <Note direction="6" time="38" Row="2" />
+    <Note direction="0" time="40" Row="1" />
+
+    <Note direction="4" time="42" Row="3" />
+    <Note direction="6" time="43" Row="2" />
+    <Note direction="0" time="44" Row="1" />
+
+    <Note direction="0" time="45" Row="3" />
+    <Note direction="0" time="46" Row="2" />
+    <Note direction="0" time="47" Row="1" />
+    
+  </Notes>
+</SongXml>

@@ -1,0 +1,14 @@
+Controls:
+
+Can be played with either a joystic controlled (preferably dancepad) and arrow keys of the keyboard (for easy testing).
+
+Keyboard: 
+	Arrow Keys
+	Enter - select, return back to menu from game over screen and from instructions
+
+Dancepad: 
+	A - up, B - left, X - right, Y - back
+	Start - select in menu, close down instructions
+	Back - return to menu from game over screen
+	
+	Dancepad might not initially select any of the meny alternatives, select one with a keyboard arrow to get it working.

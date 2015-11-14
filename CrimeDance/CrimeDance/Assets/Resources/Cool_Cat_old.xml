@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SongXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SongName="Cool Cat" Time="100">
+  <Notes>
+    <Note direction="1" time="2" />
+    <Note direction="1" time="10" />
+    <Note direction="1" time="15" />
+	<Note direction="1" time="20" />
+	<Note direction="1" time="25" />
+  </Notes>
+</SongXml>
