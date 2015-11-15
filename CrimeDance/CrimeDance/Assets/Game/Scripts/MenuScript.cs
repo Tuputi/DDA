@@ -26,6 +26,7 @@ public class MenuScript : MonoBehaviour {
     public void SelectSongName(string songname)
     {
         SongName = songname;
+
     }
 
     public void SelectNotelist(string notelistname)
