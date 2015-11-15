@@ -17,7 +17,7 @@ namespace SongData
         public static SongData.Song LoadSong(String filename)
         {
             string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-            var fileContent = File.ReadAllText(path +"/DanceDanceAssassination/Steps"+filename);
+            var fileContent = File.ReadAllText(path +"/DanceDanceAssassination/Steps/"+filename);
             var songJson = JObject.Parse(fileContent);
             var song = new SongData.Song();
             song.JsonLoad(songJson);

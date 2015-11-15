@@ -54,7 +54,7 @@ public class MusicSheetMover : MonoBehaviour {
         }
         else
         {
-            SongRecorder.StartRecording("Testlåt", 206, SongRecordingSnapping.Quater, SongDifficulty.Easy);
+            SongRecorder.StartRecording("MyTest", 206, SongRecordingSnapping.Quater, SongDifficulty.Easy);
         }
     }
 
