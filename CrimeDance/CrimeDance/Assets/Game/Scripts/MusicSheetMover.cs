@@ -36,7 +36,7 @@ public class MusicSheetMover : MonoBehaviour {
 
     void Start()
     {
-        SongRecorder.StartRecording("Testlåt", 206, SongRecordingSnapping.Quater ,SongDifficulty.Easy);
+        
 
         instance = this;
         //MenuScript menu = GameObject.Find("MenuScript").GetComponent<MenuScript>();
@@ -51,6 +51,10 @@ public class MusicSheetMover : MonoBehaviour {
         {
             //LoadMusic(musicName);
             LoadMusic(SongData.SongImportExport.LoadSong(musicName));
+        }
+        else
+        {
+            SongRecorder.StartRecording("Testlåt", 206, SongRecordingSnapping.Quater, SongDifficulty.Easy);
         }
     }
 

@@ -9,239 +9,85 @@
 
 		{
 
-			"Beat":48.75,
+			"Beat":10.5,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":50.5,
+			"Beat":12.5,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":52.5,
+			"Beat":14.5,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":54.75,
+			"Beat":16.75,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":56.75,
+			"Beat":18.75,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":58.75,
+			"Beat":21,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":60.5,
+			"Beat":23,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":62.5,
+			"Beat":25.25,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":64.75,
+			"Beat":27.5,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":66.75,
+			"Beat":29.25,
 			"Direction":0,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":68.5,
-			"Direction":0,
+			"Beat":31.5,
+			"Direction":6,
 			"NoteType":0
 		}
 ,
 		{
 
-			"Beat":70.75,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":72.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":74.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":76.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":78.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":80.75,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":82.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":84.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":86.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":88.75,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":90.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":92.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":94.75,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":96.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":98.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":100.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":102.75,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":104.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":106.75,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":108.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":110.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":112.5,
-			"Direction":0,
-			"NoteType":0
-		}
-,
-		{
-
-			"Beat":114.5,
-			"Direction":0,
+			"Beat":31.5,
+			"Direction":2,
 			"NoteType":0
 		}
 

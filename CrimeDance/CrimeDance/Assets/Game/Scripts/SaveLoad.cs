@@ -85,18 +85,20 @@ public static class SongSaveLoad
 
  public static void Save(SongXml songXml, string filename)
  {
-        if (!File.Exists(Application.persistentDataPath + "/Songs/" + filename))
+        string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+        if (!File.Exists(path + "/DanceDanceAssassination/Songs/" + filename))
         {
-            System.IO.Directory.CreateDirectory(Application.persistentDataPath + "/Songs/");
-        }
+                //System.IO.Directory.CreateDirectory(Application.persistentDataPath + "/Songs/");     
+                System.IO.Directory.CreateDirectory( path + "/DanceDanceAssassination/Songs/");
+            }
         var encoding = System.Text.Encoding.GetEncoding("UTF-8");
         Debug.Log(Application.persistentDataPath + "/Songs/" + filename);
         var serializer = new XmlSerializer(typeof(SongXml));
-        using (StreamWriter stream = new StreamWriter(Application.persistentDataPath + "/Songs/" + filename, false, encoding))
+        using (StreamWriter stream = new StreamWriter(path + "/DanceDanceAssassination/Songs/" + filename, false, encoding))
         {
             serializer.Serialize(stream, songXml);
         }
-        Debug.Log(Application.persistentDataPath + "/Songs/" + filename);
+        Debug.Log(path + "/DanceDanceAssassination/Songs/" + filename);
     }
 
 

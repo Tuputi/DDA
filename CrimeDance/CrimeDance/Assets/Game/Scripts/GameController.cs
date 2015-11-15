@@ -136,7 +136,8 @@ public class GameController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.F1)) {
             var song = SongRecorder.EndRecording();
             var songData = song.JsonSave();
-            File.WriteAllText(song.DisplayName + ".json", songData.PrettyPrint());
+            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            File.WriteAllText(path+ "/DanceDanceAssassination/Steps" + song.DisplayName + ".json", songData.PrettyPrint());
             Debug.Log("Saved file " + song.DisplayName + ".json");
         }
     }
