@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
 
@@ -10,6 +11,10 @@ public class MenuScript : MonoBehaviour {
     public static bool InCreateMode = false;
     public static MenuScript instance;
 
+    public InputField Filename;
+    public InputField BmpField;
+    public Dropdown songDropdown;
+    
 
     void Awake()
     {
@@ -18,29 +23,40 @@ public class MenuScript : MonoBehaviour {
         GameObject.Find("Instructions").GetComponent<UnityEngine.UI.Button>().Select(); //Doesn't activate always on the dancepad?
     }
 
-	public void SelectSong(AudioClip songA)
+
+
+    void CreateSonglist()
     {
-        song = songA;
-        Debug.Log("Load level");
-       
+        foreach(AudioClip ac in LoadMusic.clips)
+        {
+            //add options to songdropdown
+        }
     }
+
+
 
     public void SelectSongName(string songname)
     {
         SongName = songname;
-      foreach(AudioClip aClip in LoadMusic.clips)
+        FindSong();
+    }
+
+
+    public void FindSong()
+    {
+        foreach (AudioClip aClip in LoadMusic.clips)
         {
             Debug.Log(aClip.name);
-            if (aClip.name.Equals(songname))
+            if (aClip.name.Equals(SongName))
             {
                 song = aClip;
                 Debug.Log("Song found");
                 Application.LoadLevel(1);
             }
         }
-      if(song == null)
+        if (song == null)
         {
-            Debug.Log("song not found. Looking for filename "+songname);
+            Debug.Log("song not found. Looking for filename " + SongName);
         }
     }
 
@@ -56,5 +72,14 @@ public class MenuScript : MonoBehaviour {
 
     public void QuitApplication(){
         Application.Quit();
+    }
+
+    public void CreateModeStart()
+    {
+        InCreateMode = true;
+        SongName = songDropdown.captionText.text;
+        NoteListName = Filename.text;
+        FindSong();
+        Application.LoadLevel(1);
     }
 }
