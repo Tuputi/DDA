@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
+
 
 public class MenuScript : MonoBehaviour {
 
     public AudioClip song;
     public static string SongName;
     public static string NoteListName;
+    public static int BMP;
+
+
+
     public GameObject instructions;
     public static bool InCreateMode = false;
     public static MenuScript instance;
@@ -14,6 +20,9 @@ public class MenuScript : MonoBehaviour {
     public InputField Filename;
     public InputField BmpField;
     public Dropdown songDropdown;
+
+    public GameObject ButtonPrefab;
+    public GameObject ButtonHolder;
     
 
     void Awake()
@@ -21,26 +30,58 @@ public class MenuScript : MonoBehaviour {
         instance = this;
         DontDestroyOnLoad(this);
         GameObject.Find("Instructions").GetComponent<UnityEngine.UI.Button>().Select(); //Doesn't activate always on the dancepad?
+        CreateButtons();
     }
 
-
-
-    void CreateSonglist()
+    public void CreateButtons()
     {
-        foreach(AudioClip ac in LoadMusic.clips)
+        Debug.Log("Createbuttons");
+        string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+        DirectoryInfo dir = new DirectoryInfo(path + "/DanceDanceAssassination/Steps/");
+        FileInfo[] info = dir.GetFiles();
+        foreach (FileInfo f in info)
         {
-            //add options to songdropdown
+            SongData.Song song = SongData.SongImportExport.LoadSongPath(f.ToString());
+            string displayname = song.DisplayName;
+            GameObject button = Instantiate(ButtonPrefab);
+            button.transform.SetParent(ButtonHolder.transform);
+            button.transform.localPosition = new Vector3(0, 0, 0);
+            button.GetComponent<SongSelectButton>().SongDisplayName = displayname;
+            button.GetComponent<SongSelectButton>().Create();
         }
     }
 
-
-
     public void SelectSongName(string songname)
     {
-        SongName = songname;
+        SongSelectButton ssb = this.GetComponent<SongSelectButton>();
+        SongName = ssb.MusicName;
+        BMP = ssb.BPM;
+        NoteListName = ssb.SteplistName;
         FindSong();
     }
 
+    public void ActivateCreateMode()
+    {
+        CreateDropDown();
+    }
+
+    public void CreateModeStart()
+    {
+        InCreateMode = true;
+        SongName = songDropdown.captionText.text;
+        NoteListName = Filename.text;
+        FindSong();
+        Application.LoadLevel(1);
+    }
+
+    public void CreateDropDown()
+    {
+
+        foreach (AudioClip auClip in LoadMusic.clips)
+        {
+            songDropdown.options.Add(new Dropdown.OptionData(auClip.name));
+        }
+    }
 
     public void FindSong()
     {
@@ -53,6 +94,19 @@ public class MenuScript : MonoBehaviour {
                 Debug.Log("Song found");
                 Application.LoadLevel(1);
             }
+            string testName = aClip.name + ".ogg";
+            if (testName.Equals(SongName)){
+                song = aClip;
+                Debug.Log("Song found");
+                Application.LoadLevel(1);
+            }
+            testName = aClip.name + ".wav";
+            if (testName.Equals(SongName))
+            {
+                song = aClip;
+                Debug.Log("Song found");
+                Application.LoadLevel(1);
+            }
         }
         if (song == null)
         {
@@ -60,26 +114,8 @@ public class MenuScript : MonoBehaviour {
         }
     }
 
-    public void SelectNotelist(string notelistname)
+    public void QuitApplication()
     {
-        NoteListName = notelistname;
-    }
-
-    public void ActivateCreateMode()
-    {
-        InCreateMode = true;
-    }
-
-    public void QuitApplication(){
         Application.Quit();
-    }
-
-    public void CreateModeStart()
-    {
-        InCreateMode = true;
-        SongName = songDropdown.captionText.text;
-        NoteListName = Filename.text;
-        FindSong();
-        Application.LoadLevel(1);
     }
 }

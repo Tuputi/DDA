@@ -54,12 +54,12 @@ public class MusicSheetMover : MonoBehaviour {
         }
         else
         {
-            SongRecorder.StartRecording("MyTest", 206, SongRecordingSnapping.Quater, SongDifficulty.Easy);
+            SongRecorder.StartRecording(MenuScript.NoteListName, MenuScript.BMP, SongRecordingSnapping.Quater, SongDifficulty.Easy);
         }
     }
 
 
-    void LoadMusic(string songName)
+   /* void LoadMusic(string songName)
     {
         TimeScale = 1;
         SaveLoad.SongXml song = SaveLoad.SongSaveLoad.Load(songName);
@@ -80,12 +80,12 @@ public class MusicSheetMover : MonoBehaviour {
          
         }
         musicList = noteList;
-    }
+    }*/
 
     void LoadMusic(SongData.Song song)
     {
         TimeScale = (int)song.BeatsPerSecond / 60.0f;
-        Debug.Log("TImeScale = " + TimeScale);
+        Debug.Log("TimeScale = " + TimeScale);
 
         List<GameObject> noteList = new List<GameObject>();
 

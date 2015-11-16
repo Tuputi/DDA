@@ -23,5 +23,14 @@ namespace SongData
             song.JsonLoad(songJson);
             return song;
         }
+
+        public static SongData.Song LoadSongPath(string wholepath)
+        {
+            var fileContent = File.ReadAllText(wholepath);
+            var songJson = JObject.Parse(fileContent);
+            var song = new SongData.Song();
+            song.JsonLoad(songJson);
+            return song;
+        }
     }
 }
