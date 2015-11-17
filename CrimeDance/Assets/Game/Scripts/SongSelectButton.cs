@@ -12,10 +12,12 @@ public class SongSelectButton : MonoBehaviour {
 
     void Awake(){
 
-        this.gameObject.transform.FindChild("ArtistName").GetComponent<UnityEngine.UI.Text>().text = ArtistDisplayName;
+        Create();
+
     }
 
     public void Create(){
+        this.gameObject.transform.FindChild("ArtistName").GetComponent<UnityEngine.UI.Text>().text = ArtistDisplayName;
         this.gameObject.transform.FindChild("SongName").GetComponent<UnityEngine.UI.Text>().text = SongDisplayName;
     }
 }

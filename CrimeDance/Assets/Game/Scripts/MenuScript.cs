@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using System.IO;
 
 
@@ -23,7 +24,11 @@ public class MenuScript : MonoBehaviour {
 
     public GameObject ButtonPrefab;
     public GameObject ButtonHolder;
-    
+    public GameObject CreateModeObject;
+
+    public List<GameObject> SongButtonList;
+    public int currentButtonIndex = 0;
+    GameObject currentButton;
 
     void Awake()
     {
@@ -31,10 +36,12 @@ public class MenuScript : MonoBehaviour {
         DontDestroyOnLoad(this);
         GameObject.Find("Instructions").GetComponent<UnityEngine.UI.Button>().Select(); //Doesn't activate always on the dancepad?
         CreateButtons();
+        MoveButtons();
     }
 
     public void CreateButtons()
     {
+        SongButtonList = new List<GameObject>();
         Debug.Log("Createbuttons");
         string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
         DirectoryInfo dir = new DirectoryInfo(path + "/DanceDanceAssassination/Steps/");
@@ -44,12 +51,65 @@ public class MenuScript : MonoBehaviour {
             SongData.Song song = SongData.SongImportExport.LoadSongPath(f.ToString());
             string displayname = song.DisplayName;
             GameObject button = Instantiate(ButtonPrefab);
-            button.transform.SetParent(ButtonHolder.transform);
-            button.transform.localPosition = new Vector3(0, 0, 0);
             button.GetComponent<SongSelectButton>().SongDisplayName = displayname;
-            button.GetComponent<SongSelectButton>().Create();
+            button.name = displayname;
+            SongButtonList.Add(button);
+        }  
+    }
+
+    void Update()
+    {
+        WatchInput();
+    }
+
+    public void WatchInput()
+    {
+        int test = currentButtonIndex;
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Debug.Log("left");
+            if(--test < 0)
+            {
+                currentButtonIndex = SongButtonList.Count - 1;           
+            }
+            else
+            {
+                currentButtonIndex--;
+            }      
+            MoveButtons();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Debug.Log("right");
+            if(++test > SongButtonList.Count - 1)
+            {
+                currentButtonIndex = 0; 
+            }
+            else
+            {
+                currentButtonIndex++;
+            }
+            MoveButtons();
         }
     }
+
+
+    public void MoveButtons()
+    {
+        Destroy(currentButton);
+        string displayname = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().SongDisplayName;
+        string artistDisplayName = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().ArtistDisplayName;
+        GameObject button = Instantiate(ButtonPrefab);
+        button.transform.SetParent(ButtonHolder.transform);
+        button.transform.localPosition = new Vector3(0, 0, 0);
+        button.transform.localScale = new Vector3(1, 1, 1);
+        button.name = displayname;
+        button.GetComponent<SongSelectButton>().SongDisplayName = displayname;
+        button.GetComponent<SongSelectButton>().ArtistDisplayName = artistDisplayName;
+        button.GetComponent<SongSelectButton>().Create();
+        currentButton = button;
+    }
+
 
     public void SelectSongName(string songname)
     {
@@ -64,6 +124,11 @@ public class MenuScript : MonoBehaviour {
     {
         CreateDropDown();
     }
+    public void CreateModeButton()
+    {
+        CreateModeObject.SetActive(!CreateModeObject.activeSelf);
+        InCreateMode = !InCreateMode;
+    }
 
     public void CreateModeStart()
     {
@@ -76,7 +141,6 @@ public class MenuScript : MonoBehaviour {
 
     public void CreateDropDown()
     {
-
         foreach (AudioClip auClip in LoadMusic.clips)
         {
             songDropdown.options.Add(new Dropdown.OptionData(auClip.name));
