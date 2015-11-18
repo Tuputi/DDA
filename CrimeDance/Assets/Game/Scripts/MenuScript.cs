@@ -9,7 +9,7 @@ public class MenuScript : MonoBehaviour {
 
 
     //info about song and steplist
-    public AudioClip songAudioClip;
+    public static AudioClip songAudioClip;
     public static string DisplayName; //what the user sees as the name
     public static string SongName; //what the song is called 
     public static string ArtistName; // what the artist is called
@@ -59,6 +59,8 @@ public class MenuScript : MonoBehaviour {
             button.GetComponent<SongSelectButton>().DisplayName = song.DisplayName;
             button.GetComponent<SongSelectButton>().SongDisplayName = song.SongName;
             button.GetComponent<SongSelectButton>().ArtistDisplayName = song.ArtistName;
+            button.GetComponent<SongSelectButton>().MusicName = song.MusicName;
+            button.GetComponent<SongSelectButton>().SteplistName = f.Name;
 
             button.name = song.DisplayName;
             button.SetActive(false);
@@ -68,10 +70,10 @@ public class MenuScript : MonoBehaviour {
 
     void Update()
     {
-        WatchInput();
+        
     }
 
-    public void WatchInput()
+   /* public void WatchInput()
     {
         
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -84,7 +86,7 @@ public class MenuScript : MonoBehaviour {
             Debug.Log("right");
             IncreaseIndex();
         }
-    }
+    }*/
 
     public void DecreseIndex()
     {

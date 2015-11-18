@@ -16,7 +16,7 @@ public class MusicSheetMover : MonoBehaviour {
     public string musicName;
     public string SongName;
 
-    new public AudioSource audio;
+    public AudioSource audio;
 
     double trackLenght;
 
@@ -40,17 +40,16 @@ public class MusicSheetMover : MonoBehaviour {
 
         instance = this;
         //MenuScript menu = GameObject.Find("MenuScript").GetComponent<MenuScript>();
-        audio.clip = MenuScript.instance.songAudioClip;
+        audio.clip = MenuScript.songAudioClip;
         Debug.Log(audio.clip.name);
         trackLenght = System.Math.Round(audio.clip.length, 2);
-        musicName = MenuScript.MusicName;
         SongName = MenuScript.SongName;
         audio.Play();
         playList = new List<GameObject>();
         if (!GameController.instance.createMode)
         {
             //LoadMusic(musicName);
-            LoadMusic(SongData.SongImportExport.LoadSong(musicName));
+            LoadMusic(SongData.SongImportExport.LoadSong(MenuScript.StepListName));
         }
         else
         {

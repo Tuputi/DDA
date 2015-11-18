@@ -9,6 +9,7 @@ namespace SongData
     public class Song
     {
         public string DisplayName { get; set; } //What the player sees as the name of the level
+        public string StepListName;             //what the steplist is called
         public string ArtistName;               //what the artist is called
         public string SongName;                 //what the song is called
         public string MusicName;                //what the filename for the music is called
@@ -37,6 +38,7 @@ namespace SongData
         {
             var result = new JObjectCollection();
             result.Add("DisplayName", DisplayName);
+            result.Add("StepListName", StepListName);
             result.Add("ArtistName", ArtistName);
             result.Add("SongName", SongName);
             result.Add("MusicName", MusicName);
@@ -58,6 +60,7 @@ namespace SongData
         public void JsonLoad(JObject jObject)
         {
             this.DisplayName = jObject["DisplayName"].Value <String>();
+            this.StepListName = jObject["StepListName"].Value<String>();
             this.ArtistName = jObject["ArtistName"].Value<String>();
             this.SongName = jObject["SongName"].Value<String>();
             this.MusicName = jObject["MusicName"].Value<String>();

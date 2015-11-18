@@ -33,6 +33,7 @@ namespace SongData
             Song.ArtistName = artistName;
             Song.SongName = songName;
             Song.MusicName = musicName;
+            Song.StepListName = name;
             Song.BeatsPerSecond = beatsPerSecond;
             Song.Snapping = snapping;
 
