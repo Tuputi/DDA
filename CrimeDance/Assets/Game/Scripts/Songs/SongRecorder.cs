@@ -25,11 +25,14 @@ namespace SongData
             TimePassed += deltaTime * TimeScale;
         }
 
-        public static void StartRecording(String name, int beatsPerSecond, SongRecordingSnapping snapping, SongDifficulty difficulty)
+        public static void StartRecording(String name, String songName, string artistName, string musicName, int beatsPerSecond, SongRecordingSnapping snapping, SongDifficulty difficulty)
         {
             TimePassed = 0;
             IsStopped = false;
             Song = new Song(name, difficulty);
+            Song.ArtistName = artistName;
+            Song.SongName = songName;
+            Song.MusicName = musicName;
             Song.BeatsPerSecond = beatsPerSecond;
             Song.Snapping = snapping;
 

@@ -8,7 +8,10 @@ namespace SongData
 {
     public class Song
     {
-        public string DisplayName { get; set; }
+        public string DisplayName { get; set; } //What the player sees as the name of the level
+        public string ArtistName;               //what the artist is called
+        public string SongName;                 //what the song is called
+        public string MusicName;                //what the filename for the music is called
         public SongDifficulty Difficulty { get; set; }
 
         public int BeatsPerSecond { get; set; }
@@ -34,6 +37,9 @@ namespace SongData
         {
             var result = new JObjectCollection();
             result.Add("DisplayName", DisplayName);
+            result.Add("ArtistName", ArtistName);
+            result.Add("SongName", SongName);
+            result.Add("MusicName", MusicName);
             result.Add("Difficulty", (int)Difficulty);
             result.Add("BeatsPerSecond", BeatsPerSecond);
             result.Add("SongLength", SongLength);
@@ -52,6 +58,9 @@ namespace SongData
         public void JsonLoad(JObject jObject)
         {
             this.DisplayName = jObject["DisplayName"].Value <String>();
+            this.ArtistName = jObject["ArtistName"].Value<String>();
+            this.SongName = jObject["SongName"].Value<String>();
+            this.MusicName = jObject["MusicName"].Value<String>();
             this.Difficulty = jObject["Difficulty"].Value<SongDifficulty>();
             this.BeatsPerSecond = jObject["BeatsPerSecond"].Value<int>();
             this.SongLength = jObject["SongLength"].Value<int>();

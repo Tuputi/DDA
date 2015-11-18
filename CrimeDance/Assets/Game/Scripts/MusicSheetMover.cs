@@ -40,10 +40,10 @@ public class MusicSheetMover : MonoBehaviour {
 
         instance = this;
         //MenuScript menu = GameObject.Find("MenuScript").GetComponent<MenuScript>();
-        audio.clip = MenuScript.instance.song;
+        audio.clip = MenuScript.instance.songAudioClip;
         Debug.Log(audio.clip.name);
         trackLenght = System.Math.Round(audio.clip.length, 2);
-        musicName = MenuScript.NoteListName;
+        musicName = MenuScript.MusicName;
         SongName = MenuScript.SongName;
         audio.Play();
         playList = new List<GameObject>();
@@ -54,7 +54,7 @@ public class MusicSheetMover : MonoBehaviour {
         }
         else
         {
-            SongRecorder.StartRecording(MenuScript.NoteListName, MenuScript.BMP, SongRecordingSnapping.Quater, SongDifficulty.Easy);
+            SongRecorder.StartRecording(MenuScript.StepListName, MenuScript.SongName, MenuScript.ArtistName, MenuScript.MusicName, MenuScript.BMP, SongRecordingSnapping.Quater, SongDifficulty.Easy);
         }
     }
 

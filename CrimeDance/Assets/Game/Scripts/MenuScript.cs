@@ -7,13 +7,18 @@ using System.IO;
 
 public class MenuScript : MonoBehaviour {
 
-    public AudioClip song;
-    public static string SongName;
-    public static string NoteListName;
+
+    //info about song and steplist
+    public AudioClip songAudioClip;
+    public static string DisplayName; //what the user sees as the name
+    public static string SongName; //what the song is called 
+    public static string ArtistName; // what the artist is called
+    public static string MusicName; //what the music-file is called
+    public static string StepListName; //what the steplist-file is called
     public static int BMP;
 
 
-
+    //references to objects in scene
     public GameObject instructions;
     public static bool InCreateMode = false;
     public static MenuScript instance;
@@ -26,6 +31,7 @@ public class MenuScript : MonoBehaviour {
     public GameObject ButtonHolder;
     public GameObject CreateModeObject;
 
+    //go through different songs/levels
     public List<GameObject> SongButtonList;
     public int currentButtonIndex = 0;
     GameObject currentButton;
@@ -49,10 +55,13 @@ public class MenuScript : MonoBehaviour {
         foreach (FileInfo f in info)
         {
             SongData.Song song = SongData.SongImportExport.LoadSongPath(f.ToString());
-            string displayname = song.DisplayName;
             GameObject button = Instantiate(ButtonPrefab);
-            button.GetComponent<SongSelectButton>().SongDisplayName = displayname;
-            button.name = displayname;
+            button.GetComponent<SongSelectButton>().DisplayName = song.DisplayName;
+            button.GetComponent<SongSelectButton>().SongDisplayName = song.SongName;
+            button.GetComponent<SongSelectButton>().ArtistDisplayName = song.ArtistName;
+
+            button.name = song.DisplayName;
+            button.SetActive(false);
             SongButtonList.Add(button);
         }  
     }
@@ -64,40 +73,51 @@ public class MenuScript : MonoBehaviour {
 
     public void WatchInput()
     {
-        int test = currentButtonIndex;
+        
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Debug.Log("left");
-            if(--test < 0)
-            {
-                currentButtonIndex = SongButtonList.Count - 1;           
-            }
-            else
-            {
-                currentButtonIndex--;
-            }      
-            MoveButtons();
+            DecreseIndex();  
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Debug.Log("right");
-            if(++test > SongButtonList.Count - 1)
-            {
-                currentButtonIndex = 0; 
-            }
-            else
-            {
-                currentButtonIndex++;
-            }
-            MoveButtons();
+            IncreaseIndex();
         }
     }
 
+    public void DecreseIndex()
+    {
+        int test = currentButtonIndex;
+        if (--test < 0)
+        {
+            currentButtonIndex = SongButtonList.Count - 1;
+        }
+        else
+        {
+            currentButtonIndex--;
+        }
+        MoveButtons();
+    }
+
+    public void IncreaseIndex()
+    {
+        int test = currentButtonIndex;
+        if (++test > SongButtonList.Count - 1)
+        {
+            currentButtonIndex = 0;
+        }
+        else
+        {
+            currentButtonIndex++;
+        }
+        MoveButtons();
+    }
 
     public void MoveButtons()
     {
         Destroy(currentButton);
-        string displayname = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().SongDisplayName;
+        string displayname = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().DisplayName;
         string artistDisplayName = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().ArtistDisplayName;
         GameObject button = Instantiate(ButtonPrefab);
         button.transform.SetParent(ButtonHolder.transform);
@@ -111,13 +131,17 @@ public class MenuScript : MonoBehaviour {
     }
 
 
-    public void SelectSongName(string songname)
+    public void SelectSong(SongSelectButton ssb)
     {
-        SongSelectButton ssb = this.GetComponent<SongSelectButton>();
-        SongName = ssb.MusicName;
+        //SongSelectButton ssb = this.GetComponent<SongSelectButton>();
+        MusicName = ssb.MusicName;
+        ArtistName = ssb.ArtistDisplayName;
+        SongName = ssb.SongDisplayName;
+        DisplayName = ssb.DisplayName;
+        StepListName = ssb.SteplistName;
         BMP = ssb.BPM;
-        NoteListName = ssb.SteplistName;
         FindSong();
+        
     }
 
     public void ActivateCreateMode()
@@ -133,8 +157,12 @@ public class MenuScript : MonoBehaviour {
     public void CreateModeStart()
     {
         InCreateMode = true;
-        SongName = songDropdown.captionText.text;
-        NoteListName = Filename.text;
+        MusicName = songDropdown.captionText.text;
+        StepListName = Filename.text;
+        ArtistName = "NaN";
+        SongName = "NaN";
+        DisplayName = Filename.text;
+        BMP = System.Convert.ToInt32(BmpField.text);
         FindSong();
         Application.LoadLevel(1);
     }
@@ -152,29 +180,29 @@ public class MenuScript : MonoBehaviour {
         foreach (AudioClip aClip in LoadMusic.clips)
         {
             Debug.Log(aClip.name);
-            if (aClip.name.Equals(SongName))
+            if (aClip.name.Equals(MusicName))
             {
-                song = aClip;
+                songAudioClip = aClip;
                 Debug.Log("Song found");
                 Application.LoadLevel(1);
             }
-            string testName = aClip.name + ".ogg";
-            if (testName.Equals(SongName)){
-                song = aClip;
+            string testName = MusicName + ".ogg";
+            if (aClip.name.Equals(testName)){
+                songAudioClip = aClip;
                 Debug.Log("Song found");
                 Application.LoadLevel(1);
             }
             testName = aClip.name + ".wav";
-            if (testName.Equals(SongName))
+            if (aClip.name.Equals(testName))
             {
-                song = aClip;
+                songAudioClip = aClip;
                 Debug.Log("Song found");
                 Application.LoadLevel(1);
             }
         }
-        if (song == null)
+        if (songAudioClip == null)
         {
-            Debug.Log("song not found. Looking for filename " + SongName);
+            Debug.Log("Music not found. Looking for filename " + MusicName);
         }
     }
 

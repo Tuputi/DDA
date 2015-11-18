@@ -104,7 +104,7 @@ public class ControllerTest : MonoBehaviour {
                 {
                     notes.Add(song.transform.GetChild(i).GetComponent<Note>());
                 }
-                SaveLoad.SongSaveLoad.Save(SaveLoad.SongSaveLoad.CreateSongXml(MenuScript.NoteListName, 200, notes), MenuScript.NoteListName);
+                SaveLoad.SongSaveLoad.Save(SaveLoad.SongSaveLoad.CreateSongXml(MenuScript.StepListName, 200, notes), MenuScript.StepListName);
             }
             /* Debug.Log("Space");
              Song song = GameObject.Find("Song").GetComponent<Song>();
@@ -216,7 +216,7 @@ public class ControllerTest : MonoBehaviour {
                 {
                     notes.Add(song.transform.GetChild(i).GetComponent<Note>());
                 }
-                SaveLoad.SongSaveLoad.Save(SaveLoad.SongSaveLoad.CreateSongXml(MenuScript.NoteListName, 200, notes), MenuScript.NoteListName);
+                SaveLoad.SongSaveLoad.Save(SaveLoad.SongSaveLoad.CreateSongXml(MenuScript.StepListName, 200, notes), MenuScript.StepListName);
             }
         }
         if (Input.GetKeyDown(KeyCode.Joystick1Button8))
