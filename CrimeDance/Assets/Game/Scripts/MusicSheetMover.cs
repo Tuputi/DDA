@@ -50,6 +50,7 @@ public class MusicSheetMover : MonoBehaviour {
         {
             //LoadMusic(musicName);
             LoadMusic(SongData.SongImportExport.LoadSong(MenuScript.StepListName));
+            Debug.Log(MenuScript.StepListName);
         }
         else
         {

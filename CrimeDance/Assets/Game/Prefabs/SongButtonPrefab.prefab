@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MusicName: A Cool Cat - Ogg
-  SteplistName: CoolCat.json
+  SteplistName: Testing2.json
+  DisplayName: Cool Cat
   BPM: 206
   SongDisplayName: A Cool Cat
   ArtistDisplayName: Tape Five
@@ -198,7 +199,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11443478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11483366, guid: 16361e094b5e7ae47998af757c156a47, type: 2}
+        m_MethodName: SelectSong
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11427786}
+          m_ObjectArgumentAssemblyTypeName: SongSelectButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!222 &22247038
@@ -244,7 +256,7 @@ RectTransform:
   m_GameObject: {fileID: 158874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: .899998486, z: 1}
+  m_LocalScale: {x: .815494359, y: .733943701, z: .815494359}
   m_Children:
   - {fileID: 22435788}
   - {fileID: 22418776}
@@ -252,7 +264,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: -6.10351562e-05, y: -248.600006}
+  m_AnchoredPosition: {x: -400.000031, y: -652.884766}
   m_SizeDelta: {x: 213.800003, y: 95.4500122}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22435788

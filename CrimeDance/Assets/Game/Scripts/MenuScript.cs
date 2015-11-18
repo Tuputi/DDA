@@ -18,6 +18,7 @@ public class MenuScript : MonoBehaviour {
     public static int BMP;
 
 
+
     //references to objects in scene
     public GameObject instructions;
     public static bool InCreateMode = false;
@@ -70,7 +71,7 @@ public class MenuScript : MonoBehaviour {
 
     void Update()
     {
-        
+
     }
 
    /* public void WatchInput()
@@ -132,7 +133,7 @@ public class MenuScript : MonoBehaviour {
         currentButton = button;
     }
 
-
+    //doesn't reference to the ssb on the button but to the prefab.
     public void SelectSong(SongSelectButton ssb)
     {
         //SongSelectButton ssb = this.GetComponent<SongSelectButton>();
