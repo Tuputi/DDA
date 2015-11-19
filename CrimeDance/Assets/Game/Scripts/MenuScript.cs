@@ -55,7 +55,8 @@ public class MenuScript : MonoBehaviour {
         FileInfo[] info = dir.GetFiles();
         foreach (FileInfo f in info)
         {
-            SongData.Song song = SongData.SongImportExport.LoadSongPath(f.ToString());
+            Debug.Log(f.ToString());
+            SongData.Song song = SongData.SongImportExport.LoadSongPath(path + "/DanceDanceAssassination/Steps/"+f.ToString());
             GameObject button = Instantiate(ButtonPrefab);
             button.GetComponent<SongSelectButton>().DisplayName = song.DisplayName;
             button.GetComponent<SongSelectButton>().SongDisplayName = song.SongName;
@@ -119,18 +120,22 @@ public class MenuScript : MonoBehaviour {
 
     public void MoveButtons()
     {
-        Destroy(currentButton);
-        string displayname = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().DisplayName;
-        string artistDisplayName = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().ArtistDisplayName;
-        GameObject button = Instantiate(ButtonPrefab);
-        button.transform.SetParent(ButtonHolder.transform);
-        button.transform.localPosition = new Vector3(0, 0, 0);
-        button.transform.localScale = new Vector3(1, 1, 1);
-        button.name = displayname;
-        button.GetComponent<SongSelectButton>().SongDisplayName = displayname;
-        button.GetComponent<SongSelectButton>().ArtistDisplayName = artistDisplayName;
-        button.GetComponent<SongSelectButton>().Create();
-        currentButton = button;
+        if (SongButtonList.Count > 0)
+        {
+              Destroy(currentButton);
+                string displayname = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().DisplayName;
+                string artistDisplayName = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().ArtistDisplayName;
+                GameObject button = Instantiate(ButtonPrefab);
+                button.transform.SetParent(ButtonHolder.transform);
+                button.transform.localPosition = new Vector3(0, 0, 0);
+                button.transform.localScale = new Vector3(1, 1, 1);
+                button.name = displayname;
+                button.GetComponent<SongSelectButton>().SongDisplayName = displayname;
+                button.GetComponent<SongSelectButton>().ArtistDisplayName = artistDisplayName;
+                button.GetComponent<SongSelectButton>().Create();
+                currentButton = button;
+            
+        }
     }
 
     //doesn't reference to the ssb on the button but to the prefab.

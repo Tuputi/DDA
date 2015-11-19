@@ -26,4 +26,19 @@ public class SongSelectButton : MonoBehaviour {
         this.gameObject.transform.FindChild("ArtistName").GetComponent<UnityEngine.UI.Text>().text = ArtistDisplayName;
         this.gameObject.transform.FindChild("SongName").GetComponent<UnityEngine.UI.Text>().text = SongDisplayName;
     }
+
+
+    public void SelectSong()
+    {
+        //SongSelectButton ssb = this.GetComponent<SongSelectButton>();
+        MenuScript.MusicName = this.MusicName;
+        MenuScript.ArtistName = this.ArtistDisplayName;
+        MenuScript.SongName = this.SongDisplayName;
+        MenuScript.DisplayName = this.DisplayName;
+        MenuScript.StepListName = this.SteplistName;
+        MenuScript.BMP = this.BPM;
+        MenuScript.instance.FindSong();
+
+    }
+
 }
