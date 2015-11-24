@@ -143,6 +143,8 @@ public class GameController : MonoBehaviour {
             }
             File.WriteAllText(path+ "/DanceDanceAssassination/Steps/" + song.DisplayName + ".json", songData.PrettyPrint());
             Debug.Log("Saved file " + song.DisplayName + ".json");
+            GameObject menuscript = GameObject.Find("MenuScript").gameObject;
+            Destroy(menuscript);
             Application.LoadLevel(0);
         }
     }

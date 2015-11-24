@@ -40,6 +40,7 @@ public class MenuScript : MonoBehaviour {
     void Awake()
     {
         instance = this;
+        InCreateMode = false;
         DontDestroyOnLoad(this);
         GameObject.Find("Instructions").GetComponent<UnityEngine.UI.Button>().Select(); //Doesn't activate always on the dancepad?
         CreateButtons();
@@ -56,13 +57,16 @@ public class MenuScript : MonoBehaviour {
         foreach (FileInfo f in info)
         {
             Debug.Log(f.ToString());
-            SongData.Song song = SongData.SongImportExport.LoadSongPath(path + "/DanceDanceAssassination/Steps/"+f.ToString());
+            //SongData.Song song = SongData.SongImportExport.LoadSongPath(path + "/DanceDanceAssassination/Steps/"+f.ToString());
+            SongData.Song song = SongData.SongImportExport.LoadSongPath(f.ToString());
             GameObject button = Instantiate(ButtonPrefab);
             button.GetComponent<SongSelectButton>().DisplayName = song.DisplayName;
             button.GetComponent<SongSelectButton>().SongDisplayName = song.SongName;
             button.GetComponent<SongSelectButton>().ArtistDisplayName = song.ArtistName;
             button.GetComponent<SongSelectButton>().MusicName = song.MusicName;
+            Debug.Log("Musicname is: "+button.GetComponent<SongSelectButton>().MusicName);
             button.GetComponent<SongSelectButton>().SteplistName = f.Name;
+            Debug.Log("Steplist is: " + button.GetComponent<SongSelectButton>().SteplistName);
 
             button.name = song.DisplayName;
             button.SetActive(false);
@@ -123,15 +127,30 @@ public class MenuScript : MonoBehaviour {
         if (SongButtonList.Count > 0)
         {
               Destroy(currentButton);
-                string displayname = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().DisplayName;
+            Debug.Log("Currentsteplistname: "+SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().SteplistName);
+            SongData.Song song = SongData.SongImportExport.LoadSong(SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().SteplistName);
+            GameObject button = Instantiate(ButtonPrefab);
+            button.GetComponent<SongSelectButton>().DisplayName = song.DisplayName;
+            button.GetComponent<SongSelectButton>().SongDisplayName = song.SongName;
+            button.GetComponent<SongSelectButton>().ArtistDisplayName = song.ArtistName;
+            button.GetComponent<SongSelectButton>().MusicName = song.MusicName;
+            Debug.Log("Musicname is: " + button.GetComponent<SongSelectButton>().MusicName);
+            button.GetComponent<SongSelectButton>().SteplistName = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().SteplistName;
+            Debug.Log("Steplist is: " + button.GetComponent<SongSelectButton>().SteplistName);
+
+
+
+
+
+           /* string displayname = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().DisplayName;
                 string artistDisplayName = SongButtonList[currentButtonIndex].GetComponent<SongSelectButton>().ArtistDisplayName;
-                GameObject button = Instantiate(ButtonPrefab);
+                GameObject button = Instantiate(ButtonPrefab);*/
                 button.transform.SetParent(ButtonHolder.transform);
                 button.transform.localPosition = new Vector3(0, 0, 0);
                 button.transform.localScale = new Vector3(1, 1, 1);
-                button.name = displayname;
-                button.GetComponent<SongSelectButton>().SongDisplayName = displayname;
-                button.GetComponent<SongSelectButton>().ArtistDisplayName = artistDisplayName;
+                button.name = song.DisplayName;
+                button.GetComponent<SongSelectButton>().SongDisplayName = song.DisplayName;
+                button.GetComponent<SongSelectButton>().ArtistDisplayName = song.ArtistName;
                 button.GetComponent<SongSelectButton>().Create();
                 currentButton = button;
             
