@@ -177,10 +177,10 @@ public class MusicSheetMover : MonoBehaviour {
             GameController.instance.gunShotsUsed = 3;
         }
 
-        if (Time >= trackLenght)
+       /* if (Time >= trackLenght)
         {
             GameController.instance.GameOver();
-        }
+        }*/
     }
 
 
@@ -304,6 +304,6 @@ public class MusicSheetMover : MonoBehaviour {
     public void AddDoorNote()
     {
         addDoor = true;
-        doorAppearCounter = 40;
+        doorAppearCounter = 100;
     }
 }

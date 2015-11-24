@@ -5764,7 +5764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1391210423
 Light:
   m_ObjectHideFlags: 0
@@ -6082,9 +6082,6 @@ MonoBehaviour:
   PlayerCharacter: {fileID: 1804857654}
   gunShotsUsed: 0
   endScreen: {fileID: 1196039504}
-  noteTypeMode: 0
-  createModeSign: {fileID: 726621447}
-  createModeMenu: {fileID: 1413134776}
   camera: {fileID: 649772766}
   LocationHolder: {fileID: 1676445058}
   ExitTime: 0
@@ -6092,6 +6089,9 @@ MonoBehaviour:
   AtTarget: 0
   LeftAwayTarget: 0
   Escaped: 0
+  noteTypeMode: 0
+  createModeSign: {fileID: 726621447}
+  createModeMenu: {fileID: 1413134776}
   gameoverstate: 0
 --- !u!114 &1443753109
 MonoBehaviour:

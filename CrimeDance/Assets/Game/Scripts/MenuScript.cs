@@ -57,8 +57,16 @@ public class MenuScript : MonoBehaviour {
         foreach (FileInfo f in info)
         {
             Debug.Log(f.ToString());
-            //SongData.Song song = SongData.SongImportExport.LoadSongPath(path + "/DanceDanceAssassination/Steps/"+f.ToString());
-            SongData.Song song = SongData.SongImportExport.LoadSongPath(f.ToString());
+            SongData.Song song = null;
+            if (Application.isEditor)
+            {
+                song = SongData.SongImportExport.LoadSongPath(f.ToString());
+            }
+            else
+            {
+                song = SongData.SongImportExport.LoadSongPath(path + "/DanceDanceAssassination/Steps/" + f.ToString());
+            }
+            //SongData.Song song = SongData.SongImportExport.LoadSongPath(f.ToString());
             GameObject button = Instantiate(ButtonPrefab);
             button.GetComponent<SongSelectButton>().DisplayName = song.DisplayName;
             button.GetComponent<SongSelectButton>().SongDisplayName = song.SongName;

@@ -158,6 +158,10 @@ public class GameController : MonoBehaviour {
             Destroy(menuscript);
             Application.LoadLevel(0);
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameOver();
+        }
     }
 
 
@@ -226,6 +230,8 @@ public class GameController : MonoBehaviour {
     }
 
 
+ 
+    
     public void RegisterButtonPress(Direction button)
     {
 
@@ -351,6 +357,7 @@ public class GameController : MonoBehaviour {
         }
       
     }
+
 
     public void TestHitQualityZone()
     {
