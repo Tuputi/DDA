@@ -94,6 +94,7 @@ public class MusicSheetMover : MonoBehaviour {
             Note note = Instantiate(noteBase) as Note;
             note.PlayTime = jsonNote.Beat;
             note.direction = jsonNote.Direction;
+            note.NoteType = jsonNote.NoteType;
             note.Row = DirectionRowHelper.GetRowFromDirection(note.direction);
             noteList.Add(note.gameObject);
             note.transform.SetParent(parent);

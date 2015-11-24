@@ -41,13 +41,13 @@ namespace SongData
             SnappingScale = 1.0f / (int)snapping;
         }
 
-        public static void AddNote(Direction direction)
+        public static void AddNote(Direction direction, NoteType noteType)
         {
 
             var adjustment = TimePassed % SnappingScale;
             var exactTime = TimePassed - adjustment;
 
-            Song.SongNotes.Add(new SongNote { Beat = exactTime, Direction = direction, NoteType = NoteType.normal });
+            Song.SongNotes.Add(new SongNote { Beat = exactTime, Direction = direction, NoteType = noteType});
         }
 
         public static Song EndRecording()

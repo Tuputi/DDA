@@ -52,6 +52,17 @@ public class GameController : MonoBehaviour {
 
     public GameObject endScreen;
 
+    //loc logic
+    new public Camera camera;
+    public GameObject LocationHolder;
+    public bool ExitTime = false;
+    public bool AtDoor = false;
+    public bool AtTarget = false;
+    public bool LeftAwayTarget = false;
+    public bool Escaped = false;
+
+    List<LocationScript> locs;
+
 
     //create mode logic
     public NoteType noteTypeMode = NoteType.normal;
@@ -408,15 +419,7 @@ public class GameController : MonoBehaviour {
 
     }
 
-    new public Camera camera;
-    public GameObject LocationHolder;
-    public bool ExitTime = false;
-    public bool AtDoor = false;
-    public bool AtTarget = false;
-    public bool LeftAwayTarget = false; 
-    public bool Escaped = false;
-
-    List<LocationScript> locs;
+   
     public void PlaceTarget(){
         locs = new List<LocationScript>();
         int childCount = LocationHolder.transform.childCount-1;
@@ -508,7 +511,7 @@ public class GameController : MonoBehaviour {
 
     public void CreateNote(Direction button)
     {
-        SongRecorder.AddNote(button);
+        SongRecorder.AddNote(button, noteTypeMode);
 
         Note newNote = (Note)Instantiate(MusicSheetMover.instance.noteBase);
         newNote.direction = button;
